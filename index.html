@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Simple TinyMCE Writer</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Literata:wght@300;400;600;700&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/tinymce@6/tinymce.min.js" referrerpolicy="origin"></script>
+</head>
+<body>
+  <div class="app">
+    <header class="top">
+      <div class="brand">
+        <div class="badge">TM</div>
+        <div>
+          <div class="title">Simple TinyMCE Writer</div>
+          <div class="subtitle">Open source editor, clean writing space</div>
+        </div>
+      </div>
+      <div class="actions">
+        <button id="btn-new" class="btn ghost">New</button>
+        <button id="btn-export" class="btn">Export HTML</button>
+      </div>
+    </header>
+
+    <main class="panel">
+      <div class="meta">
+        <input id="doc-title" type="text" placeholder="Untitled document" />
+        <div class="status" id="status">Ready</div>
+      </div>
+      <textarea id="editor">Start writing here...</textarea>
+    </main>
+
+    <footer class="footer">
+      <div class="hint">Autosaves to your browser every few seconds.</div>
+      <div class="hint" id="word-count">0 words</div>
+    </footer>
+  </div>
+
+  <div id="export-modal" class="modal hidden" aria-hidden="true">
+    <div class="modal-card">
+      <div class="modal-head">
+        <div class="modal-title">Exported HTML</div>
+        <button id="btn-close" class="btn ghost">Close</button>
+      </div>
+      <textarea id="export-area" readonly></textarea>
+      <button id="btn-copy" class="btn full">Copy to Clipboard</button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
